@@ -136,7 +136,7 @@
         <div class="row">
           <div class="col s4">
             <div class="panel center">
-              <img src="img/Animasi_Neon.png" class="responsive-img materialboxed" />
+              <img src="img/IMG-20210808-WA0018.jpg" class="responsive-img materialboxed" />
               <h5></h5>
               <p>    
               </p>
@@ -144,7 +144,7 @@
           </div>
           <div class="col s4">
             <div class="panel center">
-              <img src="img/Starting.jpg" class="responsive-img materialboxed" /> 
+              <img src="img/IMG-20210808-WA0019.jpg" class="responsive-img materialboxed" /> 
               <h5></h5>
               <p>    
               </p>
@@ -152,7 +152,7 @@
           </div>
           <div class="col s4">
             <div class="panel center">
-              <img src="img/Plane_1.jpg" class="responsive-img materialboxed" />
+              <img src="img/IMG_20210808_192955.jpg" class="responsive-img materialboxed" />
               <h5></h5>
               <p>  
               </p>
@@ -219,7 +219,7 @@
             </ul>
           </div>
           <div class="col m7 s12">
-            <form>
+            <form name="submit-to-google-shee">
                 <div class="card-panel">
                     <h5>This Form</h5>
                     <div class="input-field">
@@ -282,7 +282,15 @@
       M.ScrollSpy.init(scroll,{
           scrollOffset: 50
       });
+      const scriptURL = '<https://script.google.com/macros/s/AKfycbyzM54_5MfjUgP0G7ZTNoIOvztI5yYZk_v7QMVXOx1WA-P4zGPXZeSGYrMk5pULcYGC6w/exec>'
+  const form = document.forms['submit-to-google-sheet']
 
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 
 
     </script>
