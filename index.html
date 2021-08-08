@@ -285,17 +285,7 @@
       M.ScrollSpy.init(scroll,{
           scrollOffset: 50
       });
-      const scriptURL = '<https://script.google.com/macros/s/AKfycbyzM54_5MfjUgP0G7ZTNoIOvztI5yYZk_v7QMVXOx1WA-P4zGPXZeSGYrMk5pULcYGC6w/exec>'
-  const form = document.forms['submit-to-google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-
-
+      
     </script>
   </body>
 </html>
