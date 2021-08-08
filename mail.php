@@ -15,5 +15,5 @@ if($email!=NULL){
     mail($to,$subject,$txt,$headers);
 }
 //redirect
-header("Location:retroligt.html");
+header("Location:index.html");
 ?>
